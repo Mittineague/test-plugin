@@ -9,7 +9,7 @@ If and when the code proves to be safe to use, it will be moved into a proper pl
 
 ## Installation
 
-I **strongly"" advise you to _not_ install this plugin. 
+I **strongly** advise you to _not_ install this plugin.
 
 ## Authors
 
