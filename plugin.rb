@@ -9,7 +9,6 @@ after_initialize do
 
   class Guardian
     class << self
-      alias_method :kinder_guardian, :can_send_private_message
 
       def can_send_private_message?(target)
         (target.is_a?(Group) || target.is_a?(User)) &&
@@ -29,10 +28,9 @@ after_initialize do
         (is_staff? || target.is_a?(Group) || !target.suspended?) &&
         # Blocked users can only send PM to staff
         (!@user.blocked? || target.staff?)
-        kinder_guardian?(target)
       end
-    end
 
+    end
   end
   
 end  
