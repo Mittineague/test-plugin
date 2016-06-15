@@ -9,7 +9,7 @@ after_initialize do
 
   class Guardian
     class << self
-      alias_method :kinder_guardian?, :can_send_private_message?
+      alias_method :kinder_guardian, :can_send_private_message
 
       def can_send_private_message?(target)
         (target.is_a?(Group) || target.is_a?(User)) &&
