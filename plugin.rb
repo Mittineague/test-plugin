@@ -7,11 +7,10 @@
 require 'guardian'
 
 module KinderGuardian
-  include Guardian
 
   def self.included base
     base.class_eval do
-      def self.can_send_private_message?(target)
+      def can_send_private_message?(target)
         (target.is_a?(Group) || target.is_a?(User)) &&
         # User is authenticated
         authenticated? &&
