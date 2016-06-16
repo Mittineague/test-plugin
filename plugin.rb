@@ -4,6 +4,9 @@
 # authors: Mittineague
 # url: https://github.com/Mittineague/test-plugin.git
 
+after_initialize do
+require 'guardian'
+
 class Guardian
   class << self
 
@@ -28,4 +31,6 @@ class Guardian
     end
 
   end
+end
+
 end
