@@ -7,9 +7,9 @@
 require 'guardian'
 
 module KinderGuardian
-
   def self.included base
     base.class_eval do
+
       def can_send_private_message?(target)
         (target.is_a?(Group) || target.is_a?(User)) &&
         # User is authenticated
@@ -17,7 +17,7 @@ module KinderGuardian
         # Can't send message to yourself
         is_not_me?(target) &&
         # Have to be a basic level at least
-# attempt to make Guardian kinder to New members
+# let New members message Staff
         #@user.has_trust_level?(SiteSetting.min_trust_to_send_messages) &&
         (@user.has_trust_level?(SiteSetting.min_trust_to_send_messages) || target.staff?) &&
         # PMs are enabled
@@ -29,8 +29,9 @@ module KinderGuardian
         # Blocked users can only send PM to staff
         (!@user.blocked? || target.staff?)
       end
-    end
-  end
+
+   end
+ end
 end
 
 Guardian.send(:include, KinderGuardian)
