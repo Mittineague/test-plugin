@@ -23,7 +23,10 @@ module TopicUserFix
 
     # Update the last read and the last seen post count, but only if it doesn't exist.
     # This would be a lot easier if psql supported some kind of upsert
-    self::UPDATE_TOPIC_USER_SQL = "UPDATE topic_users
+
+    self.(:remove_const, UPDATE_TOPIC_USER_SQL) if const_defined?(UPDATE_TOPIC_USER_SQL)
+    const_set(UPDATE_TOPIC_USER_SQL,
+                              "UPDATE topic_users
                                     SET
                                       last_read_post_number = GREATEST(:post_number, tu.last_read_post_number),
                                       highest_seen_post_number = t.highest_post_number,
@@ -48,16 +51,18 @@ module TopicUserFix
                                        tu.user_id = :user_id
                                   RETURNING
                                     topic_users.notification_level, tu.notification_level old_level, tu.last_read_post_number
-                                "
+                                ")
 
-    self::INSERT_TOPIC_USER_SQL = "INSERT INTO topic_users (user_id, topic_id, last_read_post_number, highest_seen_post_number, last_visited_at, first_visited_at, notification_level)
+    self.(:remove_const, INSERT_TOPIC_USER_SQL) if const_defined?(INSERT_TOPIC_USER_SQL)
+    const_set(INSERT_TOPIC_USER_SQL,
+                                  "INSERT INTO topic_users (user_id, topic_id, last_read_post_number, highest_seen_post_number, last_visited_at, first_visited_at, notification_level)
                   SELECT :user_id, :topic_id, :post_number, ft.highest_post_number, :now, :now, :new_status
                   FROM topics AS ft
                   JOIN users u on u.id = :user_id
                   WHERE ft.id = :topic_id
                     AND NOT EXISTS(SELECT 1
                                    FROM topic_users AS ftu
-                                   WHERE ftu.user_id = :user_id and ftu.topic_id = :topic_id)"
+                                   WHERE ftu.user_id = :user_id and ftu.topic_id = :topic_id)")
 
     def update_last_read(user, topic_id, post_number, msecs, opts={})
       return if post_number.blank?
@@ -94,7 +99,7 @@ module TopicUserFix
         end
 
         if
-    self::UPDATE_TOPIC_USER_SQL = "UPDATE topic_users
+    UPDATE_TOPIC_USER_SQL = "UPDATE topic_users
                                     SET
                                       last_read_post_number = GREATEST(:post_number, tu.last_read_post_number),
                                       highest_seen_post_number = t.highest_post_number,
@@ -121,7 +126,7 @@ module TopicUserFix
                                     topic_users.notification_level, tu.notification_level old_level, tu.last_read_post_number
                                 "
 
-    self::INSERT_TOPIC_USER_SQL = "INSERT INTO topic_users (user_id, topic_id, last_read_post_number, highest_seen_post_number, last_visited_at, first_visited_at, notification_level)
+    INSERT_TOPIC_USER_SQL = "INSERT INTO topic_users (user_id, topic_id, last_read_post_number, highest_seen_post_number, last_visited_at, first_visited_at, notification_level)
                   SELECT :user_id, :topic_id, :post_number, ft.highest_post_number, :now, :now, :new_status
                   FROM topics AS ft
                   JOIN users u on u.id = :user_id
