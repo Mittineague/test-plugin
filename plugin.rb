@@ -99,7 +99,7 @@ module TopicUserFix
         end
 
         if
-    self.(:remove_const, UPDATE_TOPIC_USER_SQL) if const_defined?(UPDATE_TOPIC_USER_SQL)
+    self.(:remove_const, UPDATE_TOPIC_USER_SQL)
     const_set(UPDATE_TOPIC_USER_SQL,
                               "UPDATE topic_users
                                     SET
