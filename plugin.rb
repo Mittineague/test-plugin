@@ -23,7 +23,7 @@ module TopicUserFix
 
     # Update the last read and the last seen post count, but only if it doesn't exist.
     # This would be a lot easier if psql supported some kind of upsert
-    UPDATE_TOPIC_USER_SQL = "UPDATE topic_users
+    self.class::UPDATE_TOPIC_USER_SQL = "UPDATE topic_users
                                     SET
                                       last_read_post_number = GREATEST(:post_number, tu.last_read_post_number),
                                       highest_seen_post_number = t.highest_post_number,
@@ -50,7 +50,7 @@ module TopicUserFix
                                     topic_users.notification_level, tu.notification_level old_level, tu.last_read_post_number
                                 "
 
-    INSERT_TOPIC_USER_SQL = "INSERT INTO topic_users (user_id, topic_id, last_read_post_number, highest_seen_post_number, last_visited_at, first_visited_at, notification_level)
+    self.class::INSERT_TOPIC_USER_SQL = "INSERT INTO topic_users (user_id, topic_id, last_read_post_number, highest_seen_post_number, last_visited_at, first_visited_at, notification_level)
                   SELECT :user_id, :topic_id, :post_number, ft.highest_post_number, :now, :now, :new_status
                   FROM topics AS ft
                   JOIN users u on u.id = :user_id
