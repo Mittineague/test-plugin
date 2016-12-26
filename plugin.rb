@@ -11,6 +11,7 @@ after_initialize do
     class Engine < ::Rails::Engine
       engine_name "test_plugin"
       isolate_namespace TestPlugin
+    end
   end
 
   require_dependency 'user'
