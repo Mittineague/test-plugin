@@ -6,21 +6,8 @@ function priorToApi(container)
 
 function initializePlugin(api)
 {
-  if SiteSetting.test_plugin_enabled then
-    require_dependency 'user'
-    def current_user_id
-      User.current_user.id || 2
-    end
-
-    def user_like_count
-      sql = <<-SQL
-            SELECT user.like_count
-            FROM user
-            WHERE user.id = :current_user_id
-      SQL
-      ActiveRecord::Base.exec_sql(sql) || 999
-    end
-  end
+  const user_like_count = 999;
+  return user_like_count;
 }
 
 export default {
