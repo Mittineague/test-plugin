@@ -29,5 +29,3 @@ after_initialize do
 #      render json: TestPlugin.user_like_count
   end
 end
-
-# TopicUser.send(:include, TopicUserFix)
