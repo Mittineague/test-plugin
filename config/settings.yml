@@ -1,0 +1,4 @@
+plugins:
+  test_plugin_enabled:
+    default: false
+    client: true
