@@ -1,4 +1,4 @@
 plugins:
   test_plugin_enabled:
-    default: false
+    default: true
     client: true
