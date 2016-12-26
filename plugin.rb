@@ -6,7 +6,7 @@
 
 register_asset "javascripts/discourse/templates/connectors/user-card-post-names/mitt-test-plugin.hbs"
 
-after_initialize_do
+after_initialize do
   module ::TestPlugin
     class Engine < ::Rails::Engine
       engine_name "test_plugin"
