@@ -16,17 +16,15 @@ after_initialize do
 
   require_dependency 'user'
   def current_user_id
-    user.current_user.id
+    User.current_user.id || 2
   end
 
   def user_like_count
-#   User.like_oount(current_user)
     sql = <<-SQL
             SELECT user.like_count
             FROM user
             WHERE user.id = :current_user_id
     SQL
-    ActiveRecord::Base.exec_sql(sql) rescue nil
-#      render json: TestPlugin.user_like_count
+    ActiveRecord::Base.exec_sql(sql) || 999
   end
 end
