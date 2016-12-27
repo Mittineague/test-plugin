@@ -5,16 +5,14 @@ function priorToApi(container) {
 };
 
 function initializePlugin(api) {
-  initialize(container) {
-    UserCardController.reopen({
-      user_like_count: '77'
-    });
-  }
 };
 
 export default {
   name: 'test-plugin',
-  initialize() {
-    withPluginApi('0.1', initializePlugin, { noApi: priorToApi });
+  initialize(container) {
+    UserCardController.reopen({
+      user_like_count: '77'
+    });
+  withPluginApi('0.1', initializePlugin(api), { noApi: priorToApi(container) });
   }
 };
