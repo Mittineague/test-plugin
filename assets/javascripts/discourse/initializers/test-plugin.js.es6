@@ -7,7 +7,7 @@ function priorToApi(container) {
 function initializePlugin(api) {
     name: 'test-plugin';
     registerUnbound('test-plugin', function() {
-        user_like_count: 99;
+        var user_like_count = 99;
         return new Handlebars.SafeString(user_like_count);
     });
 }
