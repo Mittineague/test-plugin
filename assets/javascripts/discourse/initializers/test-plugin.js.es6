@@ -2,13 +2,11 @@ import { registerUnbound } from 'discourse-common/lib/helpers';
 import { withPluginApi } from 'discourse/lib/plugin-api';
 
 function priorToApi(container) {
-    var user_like_count = 99;
-    return new user_like_count;
 }
 
 function initializePlugin(api) {
     registerUnbound('test-plugin', function() {
-        var user_like_count = 99;
+        user_like_count: 99;
         return new Handlebars.SafeString(user_like_count);
     });
 }
