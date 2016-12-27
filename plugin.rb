@@ -11,6 +11,7 @@ register_asset "javascripts/discourse/connectors/user-card-post-names/user-card-
 register_asset "javascripts/discourse/helpers/test-plugin.js.es6"
 register_asset "javascripts/discourse/initializers/test-plugin.js.es6"
 register_asset "javascripts/discourse/templates/connectors/user-card-post-names/user-card-test-plugin.hbs"
+register_asset "stylesheets/test-plugin.scss"
 
 PLUGIN_NAME ||= 'test-plugin'.freeze
 
