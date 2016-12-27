@@ -13,6 +13,6 @@ export default {
     UserCardController.reopen({
       user_like_count: '77'
     });
-  withPluginApi('0.1', initializePlugin(api), { noApi: priorToApi(container) });
+  withPluginApi('0.1', api => initializePlugin(api), { noApi: priorToApi(container) });
   }
 };
