@@ -5,11 +5,9 @@ function priorToApi(container) {
 };
 
 function initializePlugin(api) {
-  name: 'test-plugin',
-
   initialize(container) {
     UserCardController.reopen({
-      user_like_count: '987'
+      user_like_count: '77'
     });
   }
 };

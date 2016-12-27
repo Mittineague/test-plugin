@@ -6,14 +6,13 @@
 
 enabled_site_setting :test_plugin_enabled
 
+register_asset "javascripts/discourse/connectors/user-card-post-names/user-card-test-plugin.hbs"
 # register_asset "javascripts/discourse/controllers/test-plugin.js.es6"
-# register_asset "javascripts/discourse/helpers/test-plugin.js.es6"
+register_asset "javascripts/discourse/helpers/test-plugin.js.es6"
 register_asset "javascripts/discourse/initializers/test-plugin.js.es6"
-register_asset "javascripts/discourse/templates/connectors/user-card-post-names/test-plugin.hbs"
+register_asset "javascripts/discourse/templates/connectors/user-card-post-names/user-card-test-plugin.hbs"
 
-=begin
-
-PLUGIN_NAME ||= 'test_plugin'.freeze
+PLUGIN_NAME ||= 'test-plugin'.freeze
 
 after_initialize do
   module ::TestPlugin
@@ -24,6 +23,7 @@ after_initialize do
   end
 end
 
+=begin
 
 Nothing to see here
 
