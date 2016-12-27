@@ -2,13 +2,15 @@ import { withPluginApi } from 'discourse/lib/plugin-api';
 
 function priorToApi(container)
 {
+/*
+Nothing to see here
+*/
 }
 
 function initializePlugin(api)
 {
 /*
-  const user_like_count = 777;
-  return user_like_count;
+Nothing to see here
 */
 }
 

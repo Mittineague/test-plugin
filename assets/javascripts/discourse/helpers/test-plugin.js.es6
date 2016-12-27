@@ -1,5 +1,6 @@
 import { registerUnbound } from 'discourse-common/lib/helpers';
 registerUnbound('user_like_count', function(params) {
+//Ember.Handlebars.helper('test-plugin', function(param) {
 	var user_like_count = 99;
 /*
 	$.ajax({
@@ -11,5 +12,5 @@ registerUnbound('user_like_count', function(params) {
   }
 });
 */
-	return new Handlebars.SafeString(target);
+	return new Handlebars.SafeString(user_like_count);
 });
