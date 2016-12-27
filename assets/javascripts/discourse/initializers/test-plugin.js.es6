@@ -6,8 +6,10 @@ function priorToApi(container)
 
 function initializePlugin(api)
 {
-  const user_like_count = 999;
+/*
+  const user_like_count = 777;
   return user_like_count;
+*/
 }
 
 export default {
