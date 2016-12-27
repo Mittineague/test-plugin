@@ -1,19 +1,19 @@
-import { registerUnbound } from 'discourse-common/lib/helpers';
+// import { registerUnbound } from 'discourse-common/lib/helpers';
 import { withPluginApi } from 'discourse/lib/plugin-api';
 
 function priorToApi(container) {
-}
+};
 
 function initializePlugin(api) {
-    user_like_count: '99',
-    registerUnbound('user_like_count', function(user_like_count) {
-        return new Handlebars.SafeString(user_like_count);
-    });
-//    return new Handlebars.SafeString(user_like_count);
-}
+//  const currentUser = api.getCurrentUser();
+  return {
+    user_like_count: '999'
+  };
+};
 
 export default {
-    initialize() {
-        withPluginApi('0.1', api => initializePlugin(api), { noApi: () => priorToApi() });
-    }
-}
+  name: 'test-plugin',
+  initialize() {
+    withPluginApi('0.1', initializePlugin, { noApi: priorToApi });
+  }
+};

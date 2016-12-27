@@ -22,8 +22,6 @@ after_initialize do
   end
 end
 
-
-
 =begin
 
 Nothing to see here
