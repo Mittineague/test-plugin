@@ -1,15 +1,17 @@
-// import { registerUnbound } from 'discourse-common/lib/helpers';
+import UserCardController from 'discourse/controllers/user-card';
 import { withPluginApi } from 'discourse/lib/plugin-api';
 
 function priorToApi(container) {
 };
 
 function initializePlugin(api) {
-/*  const currentUser = api.getCurrentUser();
-  return {
-    user_like_count: '999'
-  };
-*/
+  name: 'test-plugin',
+
+  initialize(container) {
+    UserCardController.reopen({
+      user_like_count: '987'
+    });
+  }
 };
 
 export default {
