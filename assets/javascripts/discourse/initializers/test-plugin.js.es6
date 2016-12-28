@@ -8,6 +8,7 @@ Nothing to see here
 };
 
 function initializePlugin(api, registerUnbound) {
+/*
   Handlebars.registerHelper({
     user_nick_name: function() {
     },
@@ -22,6 +23,7 @@ function initializePlugin(api, registerUnbound) {
     var user_like_count = new Handlebars.SafeString(9999);
     return user_like_count;
   });
+*/
 };
 
 export default {
