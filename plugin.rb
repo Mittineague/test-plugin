@@ -21,10 +21,10 @@ after_initialize do
       engine_name PLUGIN_NAME
       isolate_namespace TestPlugin
     end
-  end
 
-  def user_gender
-    "male"
+    def user_gender
+      "male"
+    end
   end
 end
 
