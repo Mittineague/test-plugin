@@ -13,17 +13,19 @@ register_asset "javascripts/discourse/initializers/initializer-test-plugin.js.es
 register_asset "javascripts/discourse/templates/connectors/user-card-post-names/user-card-test-plugin.hbs"
 register_asset "stylesheets/test-plugin.scss"
 
-PLUGIN_NAME ||= 'test-plugin'.freeze
+# PLUGIN_NAME ||= 'test-plugin'.freeze
 
 after_initialize do
+=begin
   module ::TestPlugin
     class Engine < ::Rails::Engine
       engine_name PLUGIN_NAME
       isolate_namespace TestPlugin
     end
-
+=end
+  class TestPlugin
     def user_gender
-      return "male"
+      "male"
     end
   end
 end
