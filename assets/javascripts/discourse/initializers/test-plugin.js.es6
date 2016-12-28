@@ -1,5 +1,6 @@
 import { registerUnbound } from 'discourse-common/lib/helpers';
 import { withPluginApi } from 'discourse/lib/plugin-api';
+import UserCardController from 'discourse/controllers/user-card';
 
 function priorToApi(container) {
 /*
@@ -28,7 +29,7 @@ function initializePlugin(api, registerUnbound) {
 
 export default {
   name: 'test-plugin',
-  initialize(container) {
+  initialize(container,UserCardController) {
     UserCardController.reopen({
       user_nick_name: 'Paulo',
       user_like_count: '666'
