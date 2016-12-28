@@ -15,7 +15,7 @@ export default {
 */
   Ember.Handlebars.helper('user_gender', function() {
     return "male";
-  }
+  });
     component.set('user_nick_name', 'Pasquale');
     component.set('user_like_count', 222);
   }
