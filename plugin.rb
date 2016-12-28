@@ -14,23 +14,5 @@ register_asset "javascripts/discourse/templates/connectors/user-card-post-names/
 register_asset "stylesheets/test-plugin.scss"
 
 =begin
-PLUGIN_NAME ||= 'test-plugin'.freeze
-
-after_initialize do
-  module ::TestPlugin
-    class Engine < ::Rails::Engine
-      engine_name PLUGIN_NAME
-      isolate_namespace TestPlugin
-    end
-
-  class TestPlugin
-    def user_gender
-      "male"
-    end
-  end
-end
-
-
 Nothing to see here
-
 =end
