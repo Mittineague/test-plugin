@@ -1,6 +1,5 @@
 // import { registerUnbound } from 'discourse-common/lib/helpers';
 import { withPluginApi } from 'discourse/lib/plugin-api';
-// import UserCardController from 'discourse/controllers/user-card';
 
 function priorToApi(container) {
 /*
@@ -8,7 +7,10 @@ Nothing to see here
 */
 };
 
-function initializePlugin(api) {
+function initializePlugin(api, Ember) {
+  Ember.Helper.helper('user_gender', function() {
+    return "male";
+  });
 /*
   Handlebars.registerHelper({
     user_nick_name: function() {
@@ -29,15 +31,7 @@ function initializePlugin(api) {
 
 export default {
   name: 'test-plugin',
-//  initialize(container,UserCardController) {
   initialize(container) {
-/*
-    UserCardController.reopen({
-      user_nick_name: 'Paulo',
-      user_like_count: '666'
-    });
-*/
-//  withPluginApi('0.1', api => initializePlugin(api, registerUnbound), { noApi: priorToApi(container) });
-  withPluginApi('0.1', api => initializePlugin(api), { noApi: priorToApi(container) });
+    withPluginApi('0.1', api => initializePlugin(api, Ember), { noApi: priorToApi(container) });
   }
 };

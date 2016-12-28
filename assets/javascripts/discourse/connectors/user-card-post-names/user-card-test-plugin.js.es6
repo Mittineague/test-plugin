@@ -12,11 +12,11 @@ export default {
       var user_like_count = new Handlebars.SafeString(9999);
       return user_like_count;
     });
-*/
   Ember.Helper.helper('user_gender', function() {
     return "male";
   });
-    component.set('user_nick_name', 'Pasquale');
-    component.set('user_like_count', 222);
+*/
+    component.set('user_nick_name', 'Marianne');
+    component.set('user_like_count', 362436);
   }
 }
