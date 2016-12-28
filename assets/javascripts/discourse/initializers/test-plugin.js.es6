@@ -29,9 +29,10 @@ function initializePlugin(api, registerUnbound) {
 export default {
   name: 'test-plugin',
   initialize(container) {
-/*    UserCardController.reopen({
-      user_like_count: '77'
-    }); */
+    UserCardController.reopen({
+      user_nick_name: 'Paulo',
+      user_like_count: '666'
+    });
   withPluginApi('0.1', api => initializePlugin(api, registerUnbound), { noApi: priorToApi(container) });
   }
 };
