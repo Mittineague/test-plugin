@@ -13,7 +13,7 @@ export default {
       return user_like_count;
     });
 */
-  Ember.Handlebars.helper('user_gender', function() {
+  Ember.Helper.helper('user_gender', function() {
     return "male";
   });
     component.set('user_nick_name', 'Pasquale');
