@@ -1,8 +1,9 @@
 // import { registerUnbound } from 'discourse-common/lib/helpers';
 
 export default {
+//  setupComponent(args, component, registerUnbound) {
+  setupComponent(args, component) {
 /*
-  setupComponent(args, component, registerUnbound) {
     registerUnbound('user_nick_name', function() {
       var user_nick_name = new Handlebars.SafeString('Guiseppe');
       return user_nick_name;
