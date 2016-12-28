@@ -23,7 +23,7 @@ after_initialize do
     end
 
     def user_gender
-      "male"
+      return "male"
     end
   end
 end
