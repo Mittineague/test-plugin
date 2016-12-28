@@ -1,3 +1,4 @@
+/*
 import { registerUnbound } from 'discourse-common/lib/helpers';
 
 registerUnbound('user_nick_name', function() {
@@ -8,4 +9,4 @@ registerUnbound('user_like_count', function() {
   var user_like_count = new Handlebars.SafeString(666);
   return user_like_count;
 });
-
+*/
