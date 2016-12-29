@@ -1,5 +1,6 @@
 
 var log_info = (function() {
+  var node = document.querySelector("div.mitt-test-plugin");
   if (node.parentNode) {
     console.log("got node " + node.parentNode.nodeName);
   } else {
