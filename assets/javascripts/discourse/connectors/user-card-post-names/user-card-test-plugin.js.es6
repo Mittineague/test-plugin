@@ -1,7 +1,11 @@
 
 var log_info = (function() {
-    console.log("hey, it works");
-  }());
+  if (node.parentNode) {
+    console.log("got node " + node.parentNode.nodeName);
+  } else {
+    console.log("No Node");
+  }
+}());
 
 export default {
   setupComponent(args, component) {
