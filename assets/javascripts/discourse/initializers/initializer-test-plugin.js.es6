@@ -6,15 +6,15 @@ Nothing to see here
 */
 };
 
-function initializePlugin(api, Ember) {
-  Ember.Helper.helper('user_gender', function() {
-    return "male";
-  });
+function initializePlugin(api) {
+/*
+Nothing to see here
+*/
 };
 
 export default {
   name: 'test-plugin',
   initialize(container) {
-    withPluginApi('0.1', api => initializePlugin(api, Ember), { noApi: priorToApi(container) });
+    withPluginApi('0.1', api => initializePlugin(api), { noApi: priorToApi(container) });
   }
 };
