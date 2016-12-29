@@ -1,13 +1,13 @@
 
-var log_info = (function() {
+function log_info() {
   var node = document.querySelector('div.mitt-test-plugin');
-  if (typeof node.parentNode != null) {
-//    console.log("got node " + node.parentNode.nodeName);
-    console.log("got parentNode");
+  if (typeof node != null) {
+    console.log("got Node");
   } else {
-    console.log("No parentNode");
+    console.log("No Node");
   }
-}());
+}
+log_info();
 
 export default {
   setupComponent(args, component) {
