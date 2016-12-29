@@ -2,9 +2,10 @@
 var log_info = (function() {
   var node = document.querySelector("div.mitt-test-plugin");
   if (node.parentNode) {
-    console.log("got node " + node.parentNode.nodeName);
+//    console.log("got node " + node.parentNode.nodeName);
+    console.log("got parentNode");
   } else {
-    console.log("No Node");
+    console.log("No parentNode");
   }
 }());
 
