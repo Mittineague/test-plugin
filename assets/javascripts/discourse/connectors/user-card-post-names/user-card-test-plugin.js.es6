@@ -1,7 +1,7 @@
 
 var log_info = (function() {
-  var node = document.querySelector("div.mitt-test-plugin");
-  if (node.parentNode) {
+  var node = document.querySelector('div.mitt-test-plugin');
+  if (typeof node.parentNode != null) {
 //    console.log("got node " + node.parentNode.nodeName);
     console.log("got parentNode");
   } else {
