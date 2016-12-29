@@ -6,4 +6,8 @@ export default {
     component.set('user_age', 21);
     component.set('user_location', 'island');
   }
+
+  var log_node_info = (function() {
+    console.log("hey, it works");
+  }());
 }
