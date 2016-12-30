@@ -1,3 +1,3 @@
-function currentuser() {
+export function currentuser() {
   return "Mrs. Howell";
 }
