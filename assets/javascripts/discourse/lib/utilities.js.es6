@@ -1,3 +1,4 @@
 export function currentuser() {
-  return "Mrs. Howell";
+  var user = this.currentUser.username || "Ginger";
+  return user;
 }
