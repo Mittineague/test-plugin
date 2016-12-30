@@ -3,13 +3,13 @@ export function thecurrentuser(Discourse) {
   return username;
 }
 
-export function thelocale(Discourse) {
-  var settings = {};
+export function thelocale(I18n) {
+  var internationalization = {};
   var localesetting = "pl";
-  if (Discourse) {
-    settings = Discourse.SiteSettings;
-    if (typeof settings != null) {
-      localesetting = settings.default_locale || "es";
+  if (I18n) {
+    internationalization = I18n;
+    if (typeof internationalization != null) {
+      localesetting = internationalization.locale || "pt";
     } else {
       localesetting = "fr";
     }
