@@ -9,7 +9,7 @@ export function thelocale(Discourse) {
   if (Discourse) {
     settings = Discourse.SiteSettings;
     if (typeof settings != null) {
-      localesetting = settings.locale || "es";
+      localesetting = settings.default_locale || "es";
     } else {
       localesetting = "fr";
     }
