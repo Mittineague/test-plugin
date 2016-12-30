@@ -1,16 +1,5 @@
 export function thecurrentuser(Discourse) {
-  var user = {};
-  var username = "Ginger";
-  if (Discourse) {
-    user = Discourse.User;
-    if (typeof user != null) {
-      username = user.currentProp('username');
-    } else {
-      username = "Gilligan";
-    }
-  } else {
-    username = "Skipper";
-  }
+  var username = Discourse.User.currentProp('username') || "anon";
   return username;
 }
 
@@ -20,7 +9,7 @@ export function thelocale(Discourse) {
   if (Discourse) {
     settings = Discourse.SiteSettings;
     if (typeof settings != null) {
-      localesetting = settings.basic.default_locale.default || "br";
+      localesetting = settings.default_locale.default || "br";
     } else {
       localesetting = "fr";
     }
