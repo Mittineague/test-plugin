@@ -7,7 +7,11 @@ export function currentuser(api) {
     user = api.getCurrentUser();
     if (typeof user != null) {
       username = user.get('username');
+    } else {
+      username = "Gilligan";
     }
+  } else {
+    username = "Skipper";
   }
   return username;
 }
