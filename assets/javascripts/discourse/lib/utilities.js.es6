@@ -1,7 +1,5 @@
-// import { withPluginApi } from 'discourse/lib/plugin-api';
-
-export function currentuser(Discourse) {
-  var user = "";
+export function thecurrentuser(Discourse) {
+  var user = {};
   var username = "Ginger";
   if (Discourse) {
     user = Discourse.User;
