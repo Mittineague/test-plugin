@@ -4,17 +4,6 @@ export function thecurrentuser(Discourse) {
 }
 
 export function thelocale(I18n) {
-  var internationalization = {};
-  var localesetting = "pl";
-  if (I18n) {
-    internationalization = I18n;
-    if (typeof internationalization != null) {
-      localesetting = internationalization.locale || "pt";
-    } else {
-      localesetting = "fr";
-    }
-  } else {
-    localesetting = "de";
-  }
+  var localesetting = I18n.locale || "none";
   return localesetting;
 }
