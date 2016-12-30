@@ -20,7 +20,7 @@ export function thelocale(Discourse) {
   if (Discourse) {
     settings = Discourse.SiteSettings;
     if (typeof settings != null) {
-      localesetting = settings.default_locale || "uk";
+      localesetting = settings.basic.default_locale.default || "br";
     } else {
       localesetting = "fr";
     }
