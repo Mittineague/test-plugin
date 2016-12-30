@@ -1,12 +1,12 @@
-import { withPluginApi } from 'discourse/lib/plugin-api';
+// import { withPluginApi } from 'discourse/lib/plugin-api';
 
-export function currentuser(api) {
+export function currentuser(Discourse) {
   var user = "";
   var username = "Ginger";
-  if (api) {
-    user = api.getCurrentUser();
+  if (Discourse) {
+    user = Discourse.User;
     if (typeof user != null) {
-      username = user.get('username');
+      username = user.currentProp('username');
     } else {
       username = "Gilligan";
     }
