@@ -7,20 +7,24 @@ export function thelocale(I18n) {
   var localesetting = I18n.locale || "none";
   return localesetting;
 }
-/* new node code testing */
-export function thenode() {
+
+export function themembername() {
   var anode = document.querySelector('div#user-card div.card-content div.user-card-avatar a');
-  var nodename = "starters";
+  var thename = "starters";
   var hrefval = "na";
   var lastslashpos = 0;
   if (typeof anode != null) {
-   hrefval = anode.getAttribute('href');
-   if (typeof hrefval != null) {
-     lastslashpos = hrefval.lastIndexOf('/');
-     nodename = hrefval.substr(lastslashpos);
-   }
+    hrefval = anode.getAttribute('href');
+    if (typeof hrefval != null) {
+      lastslashpos = hrefval.lastIndexOf('/');
+      thename = hrefval.substr(lastslashpos +1);
+    }
   } else {
-   nodename = "bummer";
+    thename = "bummer";
   }
-  return nodename;
+  return thename;
+}
+
+export function theuserid() {
+  return themembername();
 }
