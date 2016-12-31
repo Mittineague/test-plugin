@@ -7,12 +7,18 @@ export function thelocale(I18n) {
   var localesetting = I18n.locale || "none";
   return localesetting;
 }
-
+href="/users/adminguy1"
 export function thenode() {
   var anode = document.querySelector('div#user-card div.card-content div.user-card-avatar a');
   var nodename = "starters";
+  var hrefval = "na";
+  var lastslashpos = 0;
   if (typeof anode != null) {
-   nodename = anode.getAttribute('href');
+   hrefval = anode.getAttribute('href');
+   if (typeof hrefval != null) {
+     lastslashpos = hrefval.lastIndexOf('/');
+     nodename = hrefval.substr(lastslashpos);
+   }
   } else {
    nodename = "bummer";
   }
