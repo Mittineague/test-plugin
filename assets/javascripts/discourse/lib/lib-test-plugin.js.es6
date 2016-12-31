@@ -9,7 +9,7 @@ export function thelocale(I18n) {
 }
 
 export function thenode() {
-  var node = document.querySelector{'.mitt-test-plugin'};
+  var node = document.querySelector('.mitt-test-plugin');
   var nodename = "starters";
   if (typeof node != null) {
    nodename = "got node";
