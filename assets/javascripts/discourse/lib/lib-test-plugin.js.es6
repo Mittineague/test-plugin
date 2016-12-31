@@ -24,7 +24,7 @@ export function themembername() {
   }
   return thename;
 }
-/* need Discourse? */
+
 export function theuserid(User) {
   var thename = themembername();
   var theid = 0;
@@ -32,7 +32,7 @@ export function theuserid(User) {
     var thenamelower = thename.toLowerCase();
     var theuserobj = User.find_by_username(thenamelower);
     if (typeof theuserobj != null) {
-      theuserobjid = theuserobj.id;
+      var theuserobjid = theuserobj.id;
       if (typeof theuserobjid != null) {
         theid = theuserobjid;
       } else {

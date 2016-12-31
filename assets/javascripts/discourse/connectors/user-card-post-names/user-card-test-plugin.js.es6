@@ -2,7 +2,7 @@ import { thecurrentuser,
          thelocale,
          themembername,
          theuserid} from 'discourse/plugins/test-plugin/discourse/lib/lib-test-plugin';
-import User from 'app/models/user';
+import User from 'discourse/models/user';
 
 export default {
   shouldRender(args, component) {
