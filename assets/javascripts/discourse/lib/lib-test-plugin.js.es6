@@ -24,7 +24,7 @@ export function themembername() {
   }
   return thename;
 }
-
+/* need Discourse? */
 export function theuserid(User) {
   var thename = themembername();
   var theid = 0;
