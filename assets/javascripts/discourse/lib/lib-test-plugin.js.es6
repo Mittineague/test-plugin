@@ -25,9 +25,9 @@ export function themembername() {
   return thename;
 }
 
-export function theuserid(User) {
+export function theuserid(Discourse) {
   var thename = themembername();
   var thenamelower = thename.toLowerCase();
-  var theid = User.find_by_username_or_email(username_lower: thenamelower);
+  var theid = Discourse.User.find_by_username_or_email(username_lower: thenamelower);
   return theid;
 }
