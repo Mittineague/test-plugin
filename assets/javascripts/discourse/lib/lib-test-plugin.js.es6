@@ -27,7 +27,17 @@ export function themembername() {
 
 export function theuserid(Discourse) {
   var thename = themembername();
-  var thenamelower = thename.toLowerCase();
-  var theid = Discourse.User.find_by_username_or_email(username_lower: thenamelower);
+  var theid = 0;
+  if (thename) {
+    var thenamelower = thename.toLowerCase();
+    var theuserobj = Discourse.User.find_by_username(thenamelower);
+    if (theuserobj != null) {
+      var theid = theuserobj.id;
+    } else {
+      theid = 99;
+    }
+  } else {
+    theid = 88;
+  }
   return theid;
 }
