@@ -26,6 +26,8 @@ export function themembername() {
 }
 
 export function theuserid(User) {
-  var theid = User.find_by_username(themembername());
+  var thename = themembername();
+  var thenamelower = thename.toLowerCase();
+  var theid = User.find_by(username_lower: thenamelower);
   return theid;
 }
