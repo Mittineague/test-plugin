@@ -25,6 +25,7 @@ export function themembername() {
   return thename;
 }
 
-export function theuserid() {
-  return themembername();
+export function theuserid(User) {
+  var theid = User.find_by_username(themembername());
+  return theid;
 }
