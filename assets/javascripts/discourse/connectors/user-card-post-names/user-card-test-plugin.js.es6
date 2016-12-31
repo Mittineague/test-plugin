@@ -1,6 +1,6 @@
 import { thecurrentuser,
          thelocale,
-         ,
+         themembername,
          theuserid} from 'discourse/plugins/test-plugin/discourse/lib/lib-test-plugin';
 import User from 'discourse/models/user';
 
