@@ -9,10 +9,10 @@ export function thelocale(I18n) {
 }
 
 export function thenode() {
-  var node = document.querySelector('.mitt-test-plugin');
+  var anode = document.querySelector('div#user-card div.card-content div.user-card-avatar a');
   var nodename = "starters";
-  if (typeof node != null) {
-   nodename = "got node";
+  if (typeof anode != null) {
+   nodename = anode.getAttribute('href');
   } else {
    nodename = "bummer";
   }
