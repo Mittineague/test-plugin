@@ -7,7 +7,7 @@ export function thelocale(I18n) {
   var localesetting = I18n.locale || "none";
   return localesetting;
 }
-
+/* new node code testing */
 export function thenode() {
   var anode = document.querySelector('div#user-card div.card-content div.user-card-avatar a');
   var nodename = "starters";
