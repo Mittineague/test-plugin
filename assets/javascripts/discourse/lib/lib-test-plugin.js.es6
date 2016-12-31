@@ -25,12 +25,12 @@ export function themembername() {
   return thename;
 }
 
-export function theuserid(Discourse) {
+export function theuserid(User) {
   var thename = themembername();
   var theid = 0;
   if (thename != 'fail') {
     var thenamelower = thename.toLowerCase();
-    var theuserobj = Discourse.User.find_by_username(thenamelower);
+    var theuserobj = User.find_by_username(thenamelower);
     if (typeof theuserobj != null) {
       theuserobjid = theuserobj.id;
       if (typeof theuserobjid != null) {
