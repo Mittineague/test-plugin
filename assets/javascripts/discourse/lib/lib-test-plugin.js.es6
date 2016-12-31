@@ -10,7 +10,7 @@ export function thelocale(I18n) {
 
 export function themembername() {
   var anode = document.querySelector('div#user-card div.card-content div.user-card-avatar a');
-  var thename = "starters";
+  var thename = "fail";
   var hrefval = "na";
   var lastslashpos = 0;
   if (typeof anode != null) {
@@ -20,7 +20,7 @@ export function themembername() {
       thename = hrefval.substr(lastslashpos +1);
     }
   } else {
-    thename = "bummer";
+    thename = "fail";
   }
   return thename;
 }
@@ -28,16 +28,21 @@ export function themembername() {
 export function theuserid(Discourse) {
   var thename = themembername();
   var theid = 0;
-  if (thename) {
+  if (thename != 'fail') {
     var thenamelower = thename.toLowerCase();
     var theuserobj = Discourse.User.find_by_username(thenamelower);
-    if (theuserobj != null) {
-      var theid = theuserobj.id;
+    if (typeof theuserobj != null) {
+      theuserobjid = theuserobj.id;
+      if (typeof theuserobjid != null) {
+        theid = theuserobjid;
+      } else {
+        theid = 99;
+      }
     } else {
-      theid = 99;
+      theid = 88;
     }
   } else {
-    theid = 88;
+    theid = 77;
   }
   return theid;
 }
