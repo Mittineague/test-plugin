@@ -29,10 +29,12 @@ export function theuserid(User) {
   var thename = themembername();
   var theid = 99;
   if (thename != 'fail') {
-//    var thenamelower = thename.toLowerCase();
     var theuserjsonobj = User.findByUsername(thename);
     if (typeof theuserjsonobj != null) {
-      theid = theuserjsonobj.id || 99;
+//      theid = theuserjsonobj.id || 99;
+for (var prop in obj) {
+  console.log("obj." + prop + " = " + theuserjsonobj[prop]);
+}
     }
   }
   return theid;
