@@ -29,10 +29,10 @@ export function theuserid(User) {
   var thename = themembername();
   var theid = 99;
   if (thename != 'fail') {
-    var thenamelower = thename.toLowerCase();
-    var theuserjsonobj = User.findByUsername(thenamelower, 'id');
+//    var thenamelower = thename.toLowerCase();
+    var theuserjsonobj = User.findByUsername(thename, 'id');
     if (typeof theuserjsonobj != null) {
-      theid = theuserjsonobj.id || 66;
+      theid = theuserjsonobj.id || 55;
     } else {
       theid = 88;
     }
