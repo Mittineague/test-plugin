@@ -32,9 +32,7 @@ export function theuserid(User) {
 //    var thenamelower = thename.toLowerCase();
     var theuserjsonobj = User.findByUsername(thename);
     if (typeof theuserjsonobj != null) {
-      theid = theuserjsonobj.user.id || 44;
-    } else {
-      theid = 88;
+      theid = theuserjsonobj.users.user.id || 99;
     }
   }
   return theid;
