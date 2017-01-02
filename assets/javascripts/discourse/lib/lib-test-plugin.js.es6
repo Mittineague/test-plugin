@@ -32,7 +32,7 @@ export function theuserid(User) {
     var theuserjsonobj = User.findByUsername(thename);
     if (typeof theuserjsonobj != null) {
 //      theid = theuserjsonobj.id || 99;
-for (var prop in obj) {
+for (var prop in theuserjsonobj) {
   console.log("obj." + prop + " = " + theuserjsonobj[prop]);
 }
     }
