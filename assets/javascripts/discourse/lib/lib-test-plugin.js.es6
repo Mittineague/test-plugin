@@ -30,9 +30,9 @@ export function theuserid(User) {
   var theid = 99;
   if (thename != 'fail') {
     var thenamelower = thename.toLowerCase();
-    var theuserjsonobj = User.findByUsername(thenamelower, 'id');
-    if (typeof theuserjsonobj != null) {
-      theid = theuserjsonobj.id;
+    var theuserobjid = User.findByUsername(thenamelower, 'id');
+    if (typeof theuserobjid != null) {
+      theid = theuserobjid;
     } else {
       theid = 88;
     }
