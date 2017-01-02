@@ -27,7 +27,7 @@ export function themembername() {
 
 export function theuserid(User) {
   var thename = themembername();
-  var theid = 0;
+  var theid = 99;
   if (thename != 'fail') {
     var thenamelower = thename.toLowerCase();
     var theuserjsonobj = User.findByUsername(thenamelower, 'id');
