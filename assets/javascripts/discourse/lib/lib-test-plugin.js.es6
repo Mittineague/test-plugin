@@ -34,11 +34,10 @@ export function theuserlikesreceived() {
      async: false,
      done: function(data) {
        likesreceived = data.user_summary.likes_received;
-       return likesreceived;
      },
      fail: function(jqXHR) {
        likesreceived = 666;
-       return likesreceived;
      }
    });
+   return likesreceived;
 }
