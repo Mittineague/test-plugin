@@ -32,11 +32,11 @@ export function theuserlikesreceived() {
      url: "/users/" + thename + "/summary.json",
      dataType: 'json',
      async: false,
-     done: function(data) {
+     success: function(data) {
        likesreceived = data.user_summary.likes_received;
      },
-     fail: function(jqXHR) {
-       likesreceived = 666;
+     error: function(e) {
+       likesreceived = null;
      }
    });
    return likesreceived;
