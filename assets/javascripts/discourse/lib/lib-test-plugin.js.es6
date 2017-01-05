@@ -25,11 +25,12 @@ export function themembername() {
   return thename;
 }
 
-export function theuserid(User) {
+export function theuserid() {
   var thename = themembername();
   var theid = 99;
+/*
   if (thename != 'fail') {
-    var theuserjsonobj = User.get(thename);
+    var theuserjsonobj = AdminUser.get(thename);
     if (typeof theuserjsonobj != null) {
 //      theid = theuserjsonobj.id || 99;
 for (var prop in theuserjsonobj) {
@@ -37,5 +38,14 @@ for (var prop in theuserjsonobj) {
 }
     }
   }
+*/
+  $.ajax({
+     url: "/users/" + thename + "/summary.json",
+     dataType: 'json',
+     async: false,
+     success: function(data) {
+     	theid = data.user_summary.likes_received;
+     }
+   });
   return theid;
 }
