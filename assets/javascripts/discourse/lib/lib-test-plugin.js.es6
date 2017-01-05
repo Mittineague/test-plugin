@@ -25,27 +25,20 @@ export function themembername() {
   return thename;
 }
 
-export function theuserid() {
+export function theuserlikesreceived() {
   var thename = themembername();
-  var theid = 99;
-/*
-  if (thename != 'fail') {
-    var theuserjsonobj = AdminUser.get(thename);
-    if (typeof theuserjsonobj != null) {
-//      theid = theuserjsonobj.id || 99;
-for (var prop in theuserjsonobj) {
-  console.log("obj." + prop + " = " + theuserjsonobj[prop]);
-}
-    }
-  }
-*/
+  var likesreceived = 0;
   $.ajax({
      url: "/users/" + thename + "/summary.json",
      dataType: 'json',
      async: false,
-     success: function(data) {
-     	theid = data.user_summary.likes_received;
+     done: function(data) {
+       likesreceived = data.user_summary.likes_received;
+       return likesreceived;
+     },
+     fail: function(jqXHR) {
+       likesreceived = 666;
+       return likesreceived;
      }
    });
-  return theid;
 }
