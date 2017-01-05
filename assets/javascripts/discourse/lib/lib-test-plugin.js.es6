@@ -29,7 +29,7 @@ export function theuserid(User) {
   var thename = themembername();
   var theid = 99;
   if (thename != 'fail') {
-    var theuserjsonobj = User.findByUsername(thename, 'GET');
+    var theuserjsonobj = User.findByUsername(thename, { type: 'GET', data: { id } });
     if (typeof theuserjsonobj != null) {
 //      theid = theuserjsonobj.id || 99;
 for (var prop in theuserjsonobj) {
