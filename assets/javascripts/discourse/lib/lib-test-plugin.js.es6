@@ -43,13 +43,17 @@ export function theuserlikesreceived() {
 }
 
 export function log_args_component(args, component) {
-  console.log("args " + args);
-  for (var aprop in args) {
-    console.log("args." + aprop + " = " + args[aprop]);
+  console.log(typeof args);
+  if (typeof args === 'object') {
+    for (var aprop in args) {
+      console.log("args." + aprop + " = " + args[aprop]);
+    }
   }
-  console.log("component " + component);
-  for (var cprop in component) {
-    console.log("component." + cprop + " = " + component[cprop]);
+  console.log(typeof component);
+  if (typeof component === 'object') {
+    for (var cprop in component) {
+      console.log("component." + cprop + " = " + component[cprop]);
+    }
   }
   return "logs";
 }
