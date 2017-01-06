@@ -43,7 +43,7 @@ export function theuserlikesreceived() {
 }
 
 export function log_args_component(args, component) {
-  var item = args;
+  var item = component;
   console.log(typeof item);
   if (typeof item === 'object') {
     for (var prop in item) {
@@ -51,6 +51,9 @@ export function log_args_component(args, component) {
         console.log(prop + " = undefined");
       }
       if (typeof item[prop] === 'string') {
+        console.log(prop + " = " + item[prop]);
+      }
+      if (typeof item[prop] === 'number') {
         console.log(prop + " = " + item[prop]);
       }
       if (typeof item[prop] === 'boolean') {
@@ -74,3 +77,10 @@ export function log_args_component(args, component) {
   }
   return "logs";
 }
+/*
+args.username = Henry
+args.avatar_template = /user_avatar/localhost/henry/{size}/119_1.png
+args.last_posted_at = 2016-12-23T03:13:08.112Z
+args.last_seen_at = 2017-01-03T19:12:25.940Z
+args.created_at = 2016-04-23T07:57:31.221Z
+*/
