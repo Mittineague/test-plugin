@@ -1,7 +1,8 @@
 import { thecurrentuser,
          themembername,
          theuserlikesreceived,
-         thelocale} from 'discourse/plugins/test-plugin/discourse/lib/lib-test-plugin';
+         thelocale,
+         new_test} from 'discourse/plugins/test-plugin/discourse/lib/lib-test-plugin';
 
 export default {
   shouldRender(args, component) {
