@@ -43,7 +43,7 @@ export function theuserlikesreceived() {
 }
 
 export function new_test(args) {
-  return args['username'].toLowerCase();
+  return (args.username).toLowerCase();
 }
 /*
 args.username = Henry
