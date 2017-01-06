@@ -43,19 +43,34 @@ export function theuserlikesreceived() {
 }
 
 export function log_args_component(args, component) {
-  console.log(typeof args);
-  if (typeof args === 'object') {
-    for (var aprop in args) {
-//      console.log("args." + aprop + " = " + args[aprop]);
-      console.log(typeof args[aprop]);
+  var item = args;
+  console.log(typeof item);
+  if (typeof item === 'object') {
+    for (var prop in item) {
+      if (typeof item[prop] === 'undefined') {
+        console.log(prop + " = undefined");
+      }
+      if (typeof item[prop] === 'string') {
+        console.log(prop + " = " + item[prop]);
+      }
+      if (typeof item[prop] === 'boolean') {
+        console.log(prop + " = boolean");
+      }
+      if (typeof item[prop] === 'function') {
+        console.log(prop + " = function");
+      }
+      if (typeof item[prop] === 'object') {
+        for (var subprop in item[prop]) {
+          if (typeof item[prop][subprop] === 'string') {
+            console.log(subprop + " = " + item[prop][subprop]);
+          } else {
+            console.log(typeof item[prop][subprop]);
+          }
+        }
+      }
     }
-  }
-  console.log(typeof component);
-  if (typeof component === 'object') {
-    for (var cprop in component) {
-//      console.log("component." + cprop + " = " + component[cprop]);
-      console.log(typeof component[cprop]);
-    }
+  } else {
+    console.log(typeof item);
   }
   return "logs";
 }
