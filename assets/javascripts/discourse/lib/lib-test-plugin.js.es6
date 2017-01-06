@@ -41,3 +41,15 @@ export function theuserlikesreceived() {
    });
    return likesreceived;
 }
+
+export function log_args_component(args, component) {
+  console.log("args " + args);
+  for (var aprop in args) {
+    console.log("args." + aprop + " = " + args[aprop]);
+  }
+  console.log("component " + component);
+  for (var cprop in component) {
+    console.log("component." + cprop + " = " + component[cprop]);
+  }
+  return "logs";
+}
