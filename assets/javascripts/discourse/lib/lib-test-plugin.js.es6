@@ -42,40 +42,8 @@ export function theuserlikesreceived() {
    return likesreceived;
 }
 
-export function log_args_component(args, component) {
-  var item = component;
-  console.log(typeof item);
-  if (typeof item === 'object') {
-    for (var prop in item) {
-      if (typeof item[prop] === 'undefined') {
-        console.log(prop + " = undefined");
-      }
-      if (typeof item[prop] === 'string') {
-        console.log(prop + " = " + item[prop]);
-      }
-      if (typeof item[prop] === 'number') {
-        console.log(prop + " = " + item[prop]);
-      }
-      if (typeof item[prop] === 'boolean') {
-        console.log(prop + " = boolean");
-      }
-      if (typeof item[prop] === 'function') {
-        console.log(prop + " = function");
-      }
-      if (typeof item[prop] === 'object') {
-        for (var subprop in item[prop]) {
-          if (typeof item[prop][subprop] === 'string') {
-            console.log(subprop + " = " + item[prop][subprop]);
-          } else {
-            console.log(typeof item[prop][subprop]);
-          }
-        }
-      }
-    }
-  } else {
-    console.log(typeof item);
-  }
-  return "logs";
+export function new_test(args) {
+  return args.username.toLowerCase();
 }
 /*
 args.username = Henry
