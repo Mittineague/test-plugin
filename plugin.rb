@@ -1,6 +1,6 @@
 # name: test-plugin
 # about: testing repository transitory plugin
-# version: 0.1
+# version: deprecated
 # authors: Mittineague
 # url: https://github.com/Mittineague/test-plugin.git
 
